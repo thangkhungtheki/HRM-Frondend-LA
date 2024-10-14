@@ -1,0 +1,9 @@
+.nuxt-link-active {
+  color: red;
+}
+.nuxt-link-exact-active {
+  color: green;
+}
+/* body{
+  zoom: 85%;
+} */
