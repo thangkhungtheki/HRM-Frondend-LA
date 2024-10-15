@@ -26,9 +26,15 @@
 
       <ul class="nav flex-column bg-white mb-0 ">
         <li class="nav-item" >
-          <p class="nav-link text-dark font-italic bg-light">
-            <i class="fa fa-th-large mr-3 text-primary fa-fw "></i>
-           <nuxt-link to="/index">Bảng Tổng</nuxt-link>
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/index">Bảng Tổng</nuxt-link>
+          </p>
+        </li>
+        <li class="nav-item" >
+          <p class="nav-link bg-light">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/index">Bảng Tổng</nuxt-link>
           </p>
         </li>
         <!-- <li class="nav-item">
