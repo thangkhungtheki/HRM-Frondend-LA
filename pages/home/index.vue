@@ -141,7 +141,7 @@
         if(result.data.token) {
           await this.login(result.data)
           // console.log(result.data)
-          this.$router.push('/user')
+          this.$router.push('/index')
         }else{
           this.clearInput()
           this.showAlert()

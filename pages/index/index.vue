@@ -32,16 +32,12 @@
 
 <script>
 import {mapState, mapActions} from 'vuex'
-import inputcomponent from '~/components/modal/input.vue'
-// import socket from '~/plugins/socket.js'
+
 export default {
   layout: "layout-hrm",
-  // middleware: [ 'checkcontext', 'auth'],
-//   beforeMount () {
-//     socket.on('User connected', this.printMsg)
-//   },
+ 
   components: {
-    inputcomponent
+  
   },
   
   mounted() {
@@ -55,53 +51,11 @@ export default {
     })
   },
   created(){
-    // send a request to get result, and assign the value to a, b, c here
+  
     
   },
   methods: {
-    // ...mapActions({
-    //   add: 'increment',
-    //   except: 'decrement',
-    //   'tanglen': 'device/tanglen'
-    // }),
-    // showNotification () {
-    //   this.$notify({
-    //     type: "success",
-    //     message: "Hello, I am a notification",
-    //     hideIcon: true,
-    //     bottom: true,
-    //     right: true,
-    //     closeDelay: 15000
-    //   })
-    // },
-//     handletang(){
-//       this.add()
-//       this.showNotification()
-//     },
-//     handlegiam(){
-//       this.except()
-//     },
-//     getData(){
-//       try {
-//         const data = this.$axios.$get(process.env.BACKEND_URL)
-//         .then(data=>{
-//           console.log(data)
-//         })
-        
-//       } catch (error) {
-//         console.error(error)
-//       }
-//     },
-//     printMsg (msg) {
-//       console.log('Socket-client on: ', msg)
-//     },
-//     emitserver() {
-//       socket.emit('chat', this.username + ' : hello server')
-//       console.log('Client emit chat on server')
-//     },
-//     additem(){
-//       this.tanglen('item 2')
-//     }
+    
    },
 
   
