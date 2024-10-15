@@ -157,7 +157,7 @@
   
       handledangnhap() {
         if (this.token) {
-          this.$router.push('/user')
+          this.$router.push('/index')
         } else {
           this.$router.push('/login')
         }

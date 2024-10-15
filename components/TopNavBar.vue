@@ -11,7 +11,7 @@
           >
             <i class="fa fa-bars"></i>
           </button>
-          <img src="/iconcuoi.jpg" alt="Kitten" class="iconheader"/>
+          <!-- <img src="/iconcuoi.jpg" alt="Kitten" class="iconheader"/> -->
           Sites Công Ty
           <!--<button
             @click="togglemenu"

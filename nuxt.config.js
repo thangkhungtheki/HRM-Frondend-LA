@@ -5,7 +5,7 @@ require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-bootstrap-template',
+    title: 'HRM-Sites',
     htmlAttrs: {
       lang: 'en'
     },

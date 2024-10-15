@@ -35,7 +35,7 @@ import {mapState, mapActions} from 'vuex'
 import inputcomponent from '~/components/modal/input.vue'
 import socket from '~/plugins/socket.js'
 export default {
-  layout: "areaAdmin",
+  layout: "layout-hrm",
   // middleware: [ 'checkcontext', 'auth'],
   beforeMount () {
     socket.on('User connected', this.printMsg)

@@ -60,7 +60,7 @@
     import {mapState} from 'vuex'
 
     export default {
-        layout: "areaAdmin",
+        layout: "layout-hrm",
         data() {
             return {     
                 password1: null,
