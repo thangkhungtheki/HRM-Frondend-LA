@@ -34,7 +34,7 @@
         <li class="nav-item" >
           <p class="nav-link bg-light">
             <i class="fa fa-th-large mr-3 text-primary fa-fw " />
-            <nuxt-link to="/index">Bảng Tổng</nuxt-link>
+            <nuxt-link to="/hopdong">Hợp Đồng</nuxt-link>
           </p>
         </li>
         <!-- <li class="nav-item">
@@ -126,35 +126,11 @@
       <!-- <CountBar /> -->
 
       <!-- <div class="row pt-4" id="tbls"> -->
-        <div>
+      <div>
         <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-2"> -->
          <nuxt></nuxt>
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-2">
-          
-            <!--dummy-->
-            
-            <!--dummy-->
-         
-        </div>
+        
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 mb-2">
-          
-          <!--dummy-->
-          
-          <!--dummy-->
-       
-      </div>
-      <!--dummy-->
-      <!-- <div class="row pt-4" id="tbls">
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-2">
-          
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-2">
-          
-        </div>
-      </div> -->
-      <!--dummy-->
     </div>
   </div>
 </template>
