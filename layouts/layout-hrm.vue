@@ -34,7 +34,7 @@
         <li class="nav-item" >
           <p class="nav-link bg-light">
             <i class="fa fa-th-large mr-3 text-primary fa-fw " />
-            <nuxt-link to="/hopdong">Hợp Đồng</nuxt-link>
+            <nuxt-link to="/index">Bảng Tổng</nuxt-link>
           </p>
         </li>
         <!-- <li class="nav-item">

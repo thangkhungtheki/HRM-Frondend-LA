@@ -9,9 +9,9 @@
 <script>
   export default {
     layout: "areaAdmin",
-    data: () => ({
-      loading: false
-    }),
+    // data: () => ({
+    //   loading: true
+    // }),
     methods: {
       start() {
         this.loading = true
