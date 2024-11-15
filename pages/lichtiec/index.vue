@@ -282,20 +282,20 @@
         itemthongtin: null
       }
     },
-    // watch: {
-    //   thang: {
-    //     handlergetAPI() {
-    //       this.fetchLunarCalendar();
-    //     },
-    //     deep: true
-    //   },
-    //   nam: {
-    //     handlergetAPI() {
-    //       this.fetchLunarCalendar();
-    //     },
-    //     deep: true
-    //   }
-    // },
+     watch: {
+       thang: {
+         handlergetAPI() {
+           this.fetchLunarCalendar();
+         },
+         deep: true
+      },
+       nam: {
+        handlergetAPI() {
+          this.fetchLunarCalendar();
+        },
+        deep: true
+      }
+     },
     async mounted () {
       
     },

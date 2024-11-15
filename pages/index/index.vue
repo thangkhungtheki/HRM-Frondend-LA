@@ -4,6 +4,10 @@
  
   
   <div>
+    <hr/>
+    <b-button variant="success" @click="importexcel">Import bảng công</b-button>
+    <b-button variant="info" @click="importnghiphep">Import nghỉ phép</b-button>
+    <b-button variant="outline-primary" @click="lammoi">Làm mới bảng</b-button>
     <!-- component modal của v-b-modal.modal-input -->
     
     <!-- <inputcomponent></inputcomponent> 
@@ -55,7 +59,17 @@ export default {
     
   },
   methods: {
-    
+    importexcel(){
+      alert('import')
+    },
+
+    importnghiphep(){
+      alert('nghiphep')
+    },
+
+    lammoi(){
+      alert('lammoi')
+    }
    },
 
   
