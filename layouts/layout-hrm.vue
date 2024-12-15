@@ -31,6 +31,24 @@
             <nuxt-link to="/index">Bảng Tổng</nuxt-link>
           </p>
         </li>
+        <li class="nav-item" >
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/nhanvien">Nhân Viên</nuxt-link>
+          </p>
+        </li>
+        <li class="nav-item" >
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/bangcong">Bảng Công</nuxt-link>
+          </p>
+        </li>
+        <li class="nav-item" >
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/nghiphep">Nghỉ Phép</nuxt-link>
+          </p>
+        </li>
         <!-- <li class="nav-item" >
           <p class="nav-link bg-light">
             <i class="fa fa-th-large mr-3 text-primary fa-fw " />
