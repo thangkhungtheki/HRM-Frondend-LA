@@ -5,9 +5,12 @@
   
   <div>
     <hr/>
-    <b-button variant="success" @click="importexcel">Import bảng công</b-button>
-    <b-button variant="info" @click="importnghiphep">Import nghỉ phép</b-button>
-    <b-button variant="outline-primary" @click="lammoi">Làm mới bảng</b-button>
+      <upload></upload>
+    <hr/>
+    <!-- <b-button variant="success" @click="importexcel">Import bảng công</b-button> -->
+    <!-- <b-button variant="info" @click="importnghiphep">Import nghỉ phép</b-button> -->
+      <uploaddsnghiphep></uploaddsnghiphep>
+    <!-- <b-button variant="outline-primary" @click="lammoi">Làm mới bảng</b-button> -->
     <!-- component modal của v-b-modal.modal-input -->
     
     <!-- <inputcomponent></inputcomponent> 
@@ -36,12 +39,14 @@
 
 <script>
 import {mapState, mapActions} from 'vuex'
-
+import upload from '@/components/uploadfile.vue'
+import uploaddsnghiphep from '@/components/uploaddsnghiphep.vue'
 export default {
   layout: "layout-hrm",
  
   components: {
-  
+    upload,
+    uploaddsnghiphep
   },
   
   mounted() {
