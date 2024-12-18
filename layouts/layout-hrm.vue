@@ -49,6 +49,18 @@
             <nuxt-link to="/nghiphep">Nghỉ Phép</nuxt-link>
           </p>
         </li>
+        <li class="nav-item" >
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/thaisan">Thai Sản</nuxt-link>
+          </p>
+        </li>
+        <li class="nav-item" >
+          <p class="nav-link">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw " />
+            <nuxt-link to="/thoiviec">Thôi việc</nuxt-link>
+          </p>
+        </li>
         <!-- <li class="nav-item" >
           <p class="nav-link bg-light">
             <i class="fa fa-th-large mr-3 text-primary fa-fw " />

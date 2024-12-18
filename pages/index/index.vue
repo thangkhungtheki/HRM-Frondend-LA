@@ -7,29 +7,51 @@
     <hr/>
       <upload></upload>
     <hr/>
-    <!-- <b-button variant="success" @click="importexcel">Import bảng công</b-button> -->
-    <!-- <b-button variant="info" @click="importnghiphep">Import nghỉ phép</b-button> -->
       <uploaddsnghiphep></uploaddsnghiphep>
-    <!-- <b-button variant="outline-primary" @click="lammoi">Làm mới bảng</b-button> -->
-    <!-- component modal của v-b-modal.modal-input -->
-    
-    <!-- <inputcomponent></inputcomponent> 
-    <h2>Counter: {{ counter }}</h2>
-    <h2>StateCouter : {{ stateCouter }} </h2>
-    <b-button variant="outline-primary" @click="additem">ADD ITEM</b-button>
-    <CountBar/>
     <hr/>
-    <b-button variant="success" @click="handletang">TĂNG</b-button>
-    <b-button variant="danger" @click="handlegiam">GIẢM</b-button>
-    <b-button variant="outline-primary" @click="getData">CHECK LOG</b-button>
-    <b-button v-b-modal.modal-input variant="dark" >MODAL</b-button>
-    <b-button variant="info" @click="emitserver">SOCKETIO</b-button> -->
-    <!-- <inputcomponent></inputcomponent> -->
-    <hr/>
-    <!-- <b-card header-tag="header" footer-tag="footer" header="Bảng dữ liệu" body-class="p-0 card-fixed">
-      
-    </b-card> -->
-    <!-- <b-table-lite hover :fields="fields"></b-table-lite> -->
+   
+    <!-- <b-row>
+    <b-col md="auto">
+      <div>
+        <div class="mt-2">Từ ngày: </div>
+        <b-form-input v-model="text" placeholder="Từ ngày ..."></b-form-input>  
+      </div>
+      <b-calendar v-model="value" @context="onContext" locale="en-US"></b-calendar>
+    </b-col> -->
+    <!-- <b-col>
+      <p>Value: <b>'{{ value }}'</b></p>
+      <p class="mb-0">Context:</p>
+      <pre class="small">{{ context }}</pre>
+    </b-col> -->
+    <!-- <b-col md="auto">
+      <div>
+        <div class="mt-2">Đến ngày: </div>
+        <b-form-input v-model="text1" placeholder="Đến ngày ..."></b-form-input>  
+      </div>
+      <b-calendar v-model="value1" @context="onContext1" locale="en-US"></b-calendar>
+    </b-col>
+  </b-row> -->
+
+   <label>Từ ngày ... </label>
+    <b-form-datepicker id="datepicker-tungay" 
+      v-model="tungay" placeholder='chọn từ ngày ...' class="mb-2"
+      today-button
+      reset-button
+      close-button
+    ></b-form-datepicker>
+   <label>Đến ngày ... </label>
+    <b-form-datepicker id="datepicker-denngay" 
+      v-model="denngay" placeholder='chọn đến ngày ...' class="mb-2"
+      today-button
+      reset-button
+      close-button
+    ></b-form-datepicker>
+     
+  <hr/>
+  <p>--- Xử lý công ---</p>
+  <p>Từ ngày : <b>{{ tungay }} </b></p>
+  <p>Đến ngày: <b>{{ denngay }}</b></p>
+  <b-button variant="success" @click="Xulucong">Xử lý công</b-button>
   </div>
 
 
@@ -43,7 +65,18 @@ import upload from '@/components/uploadfile.vue'
 import uploaddsnghiphep from '@/components/uploaddsnghiphep.vue'
 export default {
   layout: "layout-hrm",
- 
+  data() {
+      return {
+        // value: '',
+        // context1: null,
+        // text: '',
+        // value1: '',
+        // text1:'',
+        // context: null
+        tungay: '',
+        denngay: ''
+      }
+  },
   components: {
     upload,
     uploaddsnghiphep
@@ -74,14 +107,22 @@ export default {
 
     lammoi(){
       alert('lammoi')
+    },
+
+    Xulucong(){
+      alert('xu ly cong')
     }
-   },
+    // onContext1(ctx) {
+    //     this.context1 = ctx,
+    //     this.text1 = this.value1
+    // },
+    // onContext(ctx) {
+    //     this.context = ctx,
+    //     this.text = this.value
+        
+    // }
+  },
 
   
-  data() {
-    return {
-      
-    }
-  },
 }
 </script>
