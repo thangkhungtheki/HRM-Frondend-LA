@@ -3,6 +3,8 @@
     <hr>
     <h2>Nhân Viên</h2>
     <hr>
+    <b-button v-b-modal.modal-input-nhanvien variant="success" @click="themnhanvien">Thêm Nhân Viên</b-button>
+    <hr>
     <b-table striped hover :fields="fields" :items="items" :current-page="currentPage" :per-page="perPage">
       <!-- <template #cell(index)="data">
                 {{ data.index + 1 }}
@@ -44,7 +46,7 @@
 </template>
 
 <script>
-import nhanvieninput from "@/components/modal/hopdonginput.vue";
+import nhanvieninput from "@/components/modal/nhanvien-input.vue";
 
 export default {
     components: {
@@ -75,15 +77,18 @@ export default {
             this.items = promisenhanvien
         },
         showNotification () {
-        this.$notify({
-            type: "success",
-            message: "Xóa dữ liệu thành công !!!",
-            hideIcon: true,
-            bottom: true,
-            right: true,
-            closeDelay: 5000
-        })
+          this.$notify({
+              type: "success",
+              message: "Xóa dữ liệu thành công !!!",
+              hideIcon: true,
+              bottom: true,
+              right: true,
+              closeDelay: 5000
+          })
         },
+        themnhanvien(){
+          
+        }
     },
     data() {
       return {
