@@ -88,11 +88,13 @@ export default {
         },
         handlesua(item){
           this.checksua = item._id
+          this.modaltitle = "Sửa nhân viên"
           this.datamodal = item
           this.isDisabled = true
         },
         themnhanvien(){
           this.datamodal = {}
+          this.modaltitle = "Thêm nhân viên"
           this.isDisabled = false
         }
     },

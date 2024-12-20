@@ -149,6 +149,21 @@
         // alert(this.data.id)
         if(this.data._id){
           alert('nut sua')
+          const result = await this.$axios.$post(process.env.BACKEND_URL + '/hrm/suanhanvien',{
+          manv: this.data.manv,
+          tennv: this.data.tennv,
+          tenphongban: this.data.tenphongban,
+          ngayvaocty: this.data.ngayvaocty,
+          congchuan: this.data.congchuan,
+          nganhhang: this.data.nganhhang,
+          _id: this.data._id
+          })
+          if(result === 'ok'){
+            // EventBus.$emit('data-saved'); // Emit event when data is saved
+            this.showAlert()
+          } else{
+            alert('Khong thanh cong')
+          }
         }else{
           this.isDisabled = false
           const result = await this.$axios.$post(process.env.BACKEND_URL + '/hrm/themnhanvien',{
