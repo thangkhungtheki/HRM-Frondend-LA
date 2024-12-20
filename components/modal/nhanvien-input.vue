@@ -10,7 +10,7 @@
       </ul>
     </div> -->
 
-    <b-modal id="modal-input-nhanvien" ref="modal" title="Submit Your Name" @show="resetModal" @hidden="resetModal" @ok="handleOk">
+    <b-modal id="modal-nhanvien-hopdong" ref="modal" title="Thêm nhân viên" @show="resetModal" @hidden="resetModal" @ok="handleOk">
       <form ref="form" @submit.stop.prevent="handleSubmit">
 
         <b-form-group label="Name" label-for="name-input" invalid-feedback="Name is required" >

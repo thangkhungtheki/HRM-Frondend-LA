@@ -3,7 +3,7 @@
     <hr>
     <h2>Nhân Viên</h2>
     <hr>
-    <b-button v-b-modal.modal-input-nhanvien variant="success" @click="themnhanvien">Thêm Nhân Viên</b-button>
+    <b-button v-b-modal.modal-nhanvien-hopdong variant="success" @click="themnhanvien">Thêm Nhân Viên</b-button>
     <hr>
     <b-table striped hover :fields="fields" :items="items" :current-page="currentPage" :per-page="perPage">
       <!-- <template #cell(index)="data">
@@ -26,7 +26,7 @@
             </li>
           </ul>
           <ul>
-            <b-button v-b-modal.modal-input-hopdong variant="info" size="sm" @click="handlesua(row.item)">Sửa</b-button>
+            <b-button v-b-modal.modal-nhanvien-hopdong variant="info" size="sm" @click="handlesua(row.item)">Sửa</b-button>
             <b-button class="floatleft" variant="danger" size="sm" @click="handlexoa(row.item)">Xoá</b-button>
           </ul>
         </b-card>
@@ -37,7 +37,7 @@
         <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" align="fill" size="sm" class="my-0"></b-pagination>
       </b-col>
     </div>
-    <nhanvieninput :datatitem="datamodal" :title="modaltitle"> </nhanvieninput>
+    <nhanvieninput :datatitem="datamodal" :title="modaltitle" :isDisabled="isDisabled"> </nhanvieninput>
     <client-only>
     
     </client-only>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import nhanvieninput from "@/components/modal/nhanvien-input.vue";
+import nhanvieninput from "@/components/modal/modal-nhanvien-hopdong.vue";
 
 export default {
     components: {
@@ -86,12 +86,19 @@ export default {
               closeDelay: 5000
           })
         },
+        handlesua(item){
+          this.checksua = item._id
+          this.datamodal = item
+          this.isDisabled = true
+        },
         themnhanvien(){
-          
+          this.datamodal = {}
+          this.isDisabled = false
         }
     },
     data() {
       return {
+        checksua: '',
         items: [
         ],
         fields: [
@@ -138,13 +145,15 @@ export default {
         },
         // showmodal: false,
         datamodal: {
-          id: "",
-          tenhopdong: "",
-          ngaybatdau: "",
-          ngayketthuc: "",
-          ghichu: "",
+          manv: "",
+          tennv: "",
+          tenphongban: "",
+          ngayvaocty: "",
+          congchuan: "",
+          nganhhang:''
         },
         modaltitle: "",
+        isDisabled: null
       };
     },
 

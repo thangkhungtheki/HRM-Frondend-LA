@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <b-modal id="modal-input-hopdong" @show="resetModal" @hidden="resetModal" >
+    <b-modal id="modal-nhanvien-hopdong" @show="resetModal" @hidden="resetModal" >
       <template #modal-title>
         {{ title }}
       </template>
@@ -12,23 +12,29 @@
                         variant="success"
                       ></alertdanger>
       <form ref="form" @submit.stop.prevent="handleSubmit">
-        <b-form-group label="Tên hợp đồng" label-for="name-input" invalid-feedback="Name is required" >
-          <b-form-input id="tenhopdong-input" v-model="data.tenhopdong" required></b-form-input>
+        <b-form-group label="Mã nhân viên" label-for="name-input" invalid-feedback="Mã nhân viên is required" >
+          <b-form-input id="manv-input" v-model="data.manv" required :disabled="isDisabled" ></b-form-input>
         </b-form-group>
-        <b-form-group label="Ngày bắt đầu" invalid-feedback="Age is required">
-          <b-form-input id="ngaybatdau-input" v-model="data.ngaybatdau"  type="date" required></b-form-input>
+        <b-form-group label="Tên nhân viên" invalid-feedback="tên is required">
+          <b-form-input id="tennv-input" v-model="data.tennv" required></b-form-input>
         </b-form-group>
-        <b-form-group label="Ngày kết thúc" invalid-feedback="Age is required">
-          <b-form-input id="ngayketthuc-input" v-model="data.ngayketthuc" type="date" required></b-form-input>
+        <b-form-group label="Tên phòng ban" invalid-feedback="tên phòng ban is required">
+          <b-form-input id="tenphongban-input" v-model="data.tenphongban" required></b-form-input>
         </b-form-group>
-        <b-form-group label="Ghi chú" invalid-feedback="Age is required">
-          <b-form-textarea id="ghichu-area" v-model="data.ghichu" rows="5"></b-form-textarea>
+        <b-form-group label="Ngày vào cty" invalid-feedback="ngày is required">
+          <b-form-input id="ngayvaocty-input" v-model="data.ngayvaocty" type="date" required></b-form-input>
+        </b-form-group>
+        <b-form-group label="Công Chuẩn" invalid-feedback="Công chuẩn is required">
+          <b-form-input id="congchuan-input" v-model="data.congchuan" type="number" required></b-form-input>
+        </b-form-group>
+        <b-form-group label="Ngành hàng" invalid-feedback="ngành hàng is required">
+          <b-form-input id="nganhhang-input" v-model="data.nganhhang" required></b-form-input>
         </b-form-group>
         <hr/>
         
       </form>
        <template #modal-footer="{cancel}">
-      <b>{{ data.id }}</b>
+      <b>{{ data._id }}</b>
       <!-- Emulate built in modal footer ok and cancel button actions -->
       <b-button size="sm" variant="success" @click="handleLuu">
         Lưu Database
@@ -62,6 +68,11 @@
       title: {
         type: String,
         required: true
+      },
+      isDisabled: {
+        type: Boolean,
+        require: false,
+        default: false
       }
     },  
     data() {
@@ -90,6 +101,9 @@
     //     return this.age.length > 2 ? true : false
     //   }
     // },
+    computed: {
+      
+    },
     methods: {
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
@@ -133,19 +147,26 @@
   
       async handleLuu(){
         // alert(this.data.id)
-        const result = await this.$axios.$post(process.env.BACKEND_URL + '/hopdong/suahopdong',{
-          id: this.data.id,
-          tenhopdong: this.data.tenhopdong,
-          ngaybatdau: this.data.ngaybatdau,
-          ngayketthuc: this.data.ngayketthuc,
-          ghichu: this.data.ghichu
-        })
-        if(result === 'thanhcong'){
-          EventBus.$emit('data-saved'); // Emit event when data is saved
-          this.showAlert()
-        } else{
-          alert('Khong thanh cong')
+        if(this.data._id){
+          alert('nut sua')
+        }else{
+          this.isDisabled = false
+          const result = await this.$axios.$post(process.env.BACKEND_URL + '/hrm/themnhanvien',{
+          manv: this.data.manv,
+          tennv: this.data.tennv,
+          tenphongban: this.data.tenphongban,
+          ngayvaocty: this.data.ngayvaocty,
+          congchuan: this.data.congchuan,
+          nganhhang: this.data.nganhhang
+          })
+          if(result === 'ok'){
+            // EventBus.$emit('data-saved'); // Emit event when data is saved
+            this.showAlert()
+          } else{
+            alert('Khong thanh cong')
+          }
         }
+        
       }
     }
   }
